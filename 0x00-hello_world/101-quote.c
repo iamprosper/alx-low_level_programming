@@ -1,5 +1,7 @@
-/*Printing with putchar*/
+/*Printing with write*/
 #include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 
 /**
  * main - Main programm
@@ -7,12 +9,9 @@
  */
 int main(void)
 {
-	int i;
-	char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
-	int str_size = sizeof(str);
+	char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	int s = strlen(str);
 
-	for (i = 0; i < str_size; i++)
-		putchar(str[i]);
-	putchar('\n');
+	write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", s);
 	return (1);
 }
