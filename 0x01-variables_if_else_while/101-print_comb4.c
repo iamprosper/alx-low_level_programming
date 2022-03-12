@@ -16,10 +16,17 @@ int main(void)
 		for (j = i + 1; j <= 8; j++)
 			for (k = j + 1; k <= 9; k++)
 			{
+				putchar(i + '0');
+				putchar(j + '0');
+				putchar(k + '0');
 				if (i != 7)
-					printf("%d%d%d, ", i, j, k);
+				{
+					putchar(',');
+					putchar(' ');
+					/*printf("%d%d%d, ", i, j, k);*/
+				}
 				else
-					printf("%d%d%d\n", i, j, k);
+					putchar('\n');
 			}
 
 	return (0);
