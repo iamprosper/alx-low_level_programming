@@ -4,7 +4,6 @@
  * @str: Pointer to char
  *
  */
-int _putchar(char c);
 void _puts(char *str)
 {
 	int len = 0;
