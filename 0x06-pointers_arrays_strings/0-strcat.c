@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * _strcat - Concatenate two strings with pointers
  * @dest: Pointer to char
@@ -20,10 +19,7 @@ char *_strcat(char *dest, char *src)
 		src_len++;
 
 	for (i = 0; i < src_len; i++)
-	{
-		_putchar(src[i]);
 		dest[dest_len + i] = src[i];
-	}
 	dest[dest_len + i] = '\0';
 
 	return (dest);
