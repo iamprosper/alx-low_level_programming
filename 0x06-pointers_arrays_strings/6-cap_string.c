@@ -35,6 +35,9 @@ char *cap_string(char *c)
 						c[i + 2] = c[i + 2] - 32;
 				}
 			}
+			
+			if (c[i] == 9)
+				c[i] = ' ';
 		}
 	}
 	_putchar('\n');
