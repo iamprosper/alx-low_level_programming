@@ -36,7 +36,6 @@ char *cap_string(char *c)
 				}
 			}
 		}
-		_putchar(c[i]);
 	}
 	_putchar('\n');
 	return (c);
