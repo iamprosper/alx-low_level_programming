@@ -36,7 +36,7 @@ void print_char(char *s)
  */
 int move_next(char *s, int i)
 {
-	if (*(s + 1) != '\0')
+	if (*(s + 0) != '\0')
 	{
 		i++;
 		return (move_next(&(*(s + 1)), i));
