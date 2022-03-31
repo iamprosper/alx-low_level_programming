@@ -31,7 +31,7 @@ int _sqrt_recursion(int n)
  */
 int _sqrt(int n, int ending, int suggested_root)
 {
-	if ( (long)n < (long)suggested_root * suggested_root)
+	if ((long)n < (long)suggested_root * suggested_root)
 		return (_sqrt(n, ending, suggested_root / ending));
 	return (suggested_root);
 }
