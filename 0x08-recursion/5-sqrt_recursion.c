@@ -8,7 +8,11 @@ int _sqrt(int n, int ending, int suggested_root);
  */
 int _sqrt_recursion(int n)
 {
-	if (n % 2 == 0)
+	if (n < 0)
+		return (-1);
+	if (n == 1)
+		return (1);
+	else if (n % 2 == 0)
 		return (_sqrt(n, 2, n / 2));
 	else if (n % 3 == 0)
 		return (_sqrt(n, 3, n / 3));
@@ -27,7 +31,7 @@ int _sqrt_recursion(int n)
  */
 int _sqrt(int n, int ending, int suggested_root)
 {
-	if (n < suggested_root * suggested_root)
+	if ( (long)n < (long)suggested_root * suggested_root)
 		return (_sqrt(n, ending, suggested_root / ending));
 	return (suggested_root);
 }
