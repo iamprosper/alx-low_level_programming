@@ -45,9 +45,11 @@ int check_palindrome(char *s, int n, int mid)
 {
 	if (mid  < n / 2)
 	{
-		printf("n : %d, mid : %d - ", n, mid);
-		printf("char up :%c - ", *(s + mid));
-		printf("char end: %c\n", *(s + (n - mid - 1)));
+		/*
+		 *printf("n : %d, mid : %d - ", n, mid);
+		 *printf("char up :%c - ", *(s + mid));
+		 *printf("char end: %c\n", *(s + (n - mid - 1)));
+		 */
 		if (*(s + mid) == *(s + (n - mid - 1)))
 		{
 			mid++;
