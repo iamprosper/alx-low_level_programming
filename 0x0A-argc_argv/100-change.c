@@ -16,14 +16,19 @@ int main(int argc, char *argv[])
 	int coins_number = 0;
 	int coins_values[] = {25, 10, 5, 2, 1};
 
-	if (argc > 2)
+	if (argc > 2 || argc == 1)
 	{
 		printf("Error\n");
 		exit(EXIT_FAILURE);
 	}
 	cents_value = atoi(argv[1]);
-	coins_number = change_coins(cents_value, coins_values, coins_number);
-	printf("%d\n", coins_number);
+	if (cents_value <= 0)
+		printf("0\n");
+	else
+	{
+		coins_number = change_coins(cents_value, coins_values, coins_number);
+		printf("%d\n", coins_number);
+	}
 	exit(EXIT_SUCCESS);
 }
 
