@@ -16,11 +16,15 @@ char *_strdup(char *str)
 		return (NULL);
 	while (*(str + size) != '\0')
 		size++;
-	copy = malloc(sizeof(char) * size);
-	while (i < size)
+	if (size > 0)
 	{
-		*(copy + i) = *(str + i);
-		i++;
+		copy = malloc(sizeof(char) * (size + 1));
+		while (i < size)
+		{
+			*(copy + i) = *(str + i);
+			i++;
+		}
+		return (copy);
 	}
-	return (copy);
+	return (NULL);
 }
