@@ -15,17 +15,20 @@ char *_strchr(char *s, char c)
 	{
 		while (s[i] != '\0')
 			i++;
-		return (*(s + i));
+		return (&(*(s + i)));
 	}
-
-	while (s[i] != '\0')
+	else
 	{
-		if (s[i] == c)
+
+		while (s[i] != '\0')
 		{
-			result = &s[i];
-			break;
+			if (s[i] == c)
+			{
+				result = &s[i];
+				break;
+			}
+			i++;
 		}
-		i++;
 	}
 	return (result);
 }
