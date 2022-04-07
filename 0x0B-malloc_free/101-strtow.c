@@ -37,7 +37,7 @@ char **strtow(char *str)
 	}
 
 
-	strings = (char **) malloc((sizeof(char *) * find) + 1);
+	strings = (char **) malloc(sizeof(char *) * (find + 1));
 
 	if (strings == NULL)
 		return (NULL);
@@ -51,7 +51,7 @@ char **strtow(char *str)
 			len_str++;
 			if ((str[i + 1] == 32) || str[i + 1] == '\0')
 			{
-				*(strings + find) = (char *) malloc(sizeof(char) * len_str + 1);
+				*(strings + find) = (char *) malloc(sizeof(char) * (len_str + 1));
 
 				if (*(strings + find) == NULL)
 				{
