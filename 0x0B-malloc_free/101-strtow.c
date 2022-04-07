@@ -17,7 +17,7 @@ char **strtow(char *str)
 
 	len_str = len_s(str);
 
-	if ((len_str == 1 && *str == '\0') || str == NULL)
+	if ((len_str == 1 && *str == 32) || *str == '\0' || str == NULL)
 		return (NULL);
 
 	len_str = 0;
@@ -31,7 +31,7 @@ char **strtow(char *str)
 	}
 
 
-	strings = (char **) malloc(sizeof(char *) * find + 1);
+	strings = (char **) malloc((sizeof(char *) * find) + 1);
 
 	if (strings == NULL)
 		return (NULL);
@@ -49,7 +49,7 @@ char **strtow(char *str)
 
 			if (*(strings + find) == NULL)
 			{
-				while (find-- > 0)
+				while (--find >= 0)
 					free(strings[find]);
 				free(strings);
 				return (NULL);
