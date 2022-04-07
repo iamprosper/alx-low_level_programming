@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 int len_s(char *s);
 /**
@@ -46,21 +47,22 @@ char **strtow(char *str)
 	while (str[i] != '\0')
 	{
 		if (str[i] != 32)
-			len_str++;
-		if ((str[i] != 32 && str[i + 1] == 32)
-				|| (str[i] != 32 && str[i + 1] == '\0'))
 		{
-			*(strings + find) = (char *) malloc(sizeof(char) * len_str);
-
-			if (*(strings + find) == NULL)
+			len_str++;
+			if ((str[i + 1] == 32) || str[i + 1] == '\0')
 			{
-				while (--find >= 0)
-					free(strings[find]);
-				free(strings);
-				return (NULL);
+				*(strings + find) = (char *) malloc(sizeof(char) * len_str + 1);
+
+				if (*(strings + find) == NULL)
+				{
+					while (--find >= 0)
+						free(strings[find]);
+					free(strings);
+					return (NULL);
+				}
+				find += 1;
+				len_str = 0;
 			}
-			find += 1;
-			len_str = 0;
 		}
 		i++;
 
