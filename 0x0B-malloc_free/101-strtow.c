@@ -20,6 +20,11 @@ char **strtow(char *str)
 	if ((len_str == 1 && *str == 32) || *str == '\0' || str == NULL)
 		return (NULL);
 
+	while (str[i] == 32)
+		i++;
+	if (i == len_str)
+		return (NULL);
+	i = 0
 	len_str = 0;
 
 	while (str[i] != '\0')
