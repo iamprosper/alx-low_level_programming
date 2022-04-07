@@ -24,7 +24,7 @@ char **strtow(char *str)
 		i++;
 	if (i == len_str)
 		return (NULL);
-	i = 0
+	i = 0;
 	len_str = 0;
 
 	while (str[i] != '\0')
