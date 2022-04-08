@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * _calloc - Allocates memory for an array with specific data type
  * @nmemb: An unsigned int the number of element int the array
@@ -10,6 +11,11 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *mem;
+	int a = (int) nmemb;
+	int b = (int) nmemb;
+
+	if (a < 0 || b < 0)
+		return (NULL);
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
