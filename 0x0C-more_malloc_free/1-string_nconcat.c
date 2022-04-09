@@ -43,7 +43,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			i++;
 		}
 	}
-	else if (s2 == NULL)
+	else if (s2 == NULL && s1 != NULL)
 	{
 		new_str = malloc(sizeof(char) * (len_str(s1) + 1));
 
@@ -56,8 +56,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			i++;
 		}
 	}
-	else if (s1 == NULL)
+	else if (s1 == NULL && s2 != NULL)
 	{
+		if (n == 0)
+			return (malloc(sizeof(char)));
 		if (n >= len_str(s2))
 			src_len = len_str(s2);
 		else
@@ -74,6 +76,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			i++;
 		}
 	}
+	else
+		new_str = malloc(sizeof(char));
 	new_str[i] = '\0';
 
 	return (new_str);
