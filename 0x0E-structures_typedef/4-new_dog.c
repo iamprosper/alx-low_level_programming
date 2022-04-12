@@ -19,18 +19,23 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	dog_name = malloc(sizeof(char) * (str_len(name) + 1));
 	if (dog_name == NULL)
+	{
+		free(new_dog);
 		return (NULL);
+	}
 	owner_name = malloc(sizeof(char) * (str_len(owner) + 1));
 	if (owner_name == NULL)
+	{
+		free(dog_name);
+		free(new_dog);
 		return (NULL);
+	}
 	dog_name = populate(name, dog_name);
 	owner_name = populate(owner, owner_name);
 	new_dog->name = name;
 	new_dog->owner = owner;
 	new_dog->age = age;
 
-	free(dog_name);
-	free(owner_name);
 	return (new_dog);
 }
 
