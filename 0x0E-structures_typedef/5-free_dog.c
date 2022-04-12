@@ -11,5 +11,4 @@ void free_dog(dog_t *d)
 		free(d);
 		EXIT_SUCCESS;
 	}
-	EXIT_FAILURE;
 }
