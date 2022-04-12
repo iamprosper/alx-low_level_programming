@@ -20,4 +20,5 @@ dog_t *new_dog(char *name, float age, char *owner);
 void free_dog(dog_t *d);
 int str_len(char *s);
 int _putchar(char c);
+char *populate(char *src, char *dest);
 #endif
