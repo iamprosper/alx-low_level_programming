@@ -33,6 +33,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_name = populate(name, dog_name);
 	owner_name = populate(owner, owner_name);
 	new_dog->name = dog_name;
+	/*printf("new - dog: %i\n", new_dog->name == dog_name);*/
+	/*printf("dog - name: %i\n", dog_name == name);*/
 	new_dog->owner = owner_name;
 	new_dog->age = age;
 
