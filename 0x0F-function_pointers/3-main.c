@@ -16,8 +16,8 @@ int main(int argc, char *argv[])
 		/*printf("Arg 1: %s\n", argv[1]);*/
 		/*printf("Arg 2: %s\n", argv[2]);*/
 		/*printf("Arg 3: %s\n", argv[3]);*/
-		n1 = _atoi(argv[1]);
-		n2 = _atoi(argv[3]);
+		n1 = atoi(argv[1]);
+		n2 = atoi(argv[3]);
 
 		if ((argv[2][0] == '/' || argv[2][0] == '%')
 				&& n2 == 0
