@@ -18,7 +18,7 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int i = 0;
 
-	while (*ops[i].op != '\0' && strlen(s) == 1)
+	while (ops[i].op != NULL && strlen(s) == 1)
 	{
 		/*printf("Inside\n");*/
 		/*printf("s is %c - ",*s);*/
@@ -34,8 +34,8 @@ int (*get_op_func(char *s))(int, int)
 			/*printf("Checked success\n");*/
 			return (ops[i].f);
 		}
-		/*printf("Checking the next op.....\n");*/
 		i++;
+		/*printf("Checking the next op.....\n");*/
 	}
 	/*printf("Not correspondind\n");*/
 	return (NULL);
