@@ -6,25 +6,17 @@
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-	if (separator != NULL && n > 0)
+	unsigned int i;
+	va_list list;
+
+	va_start(list, n);
+	for (i = 0; i < n; i++)
 	{
-		va_list va;
-		unsigned int i;
-		int  *value = malloc(sizeof(int));
-
-		va_start(va, n);
-
-		for (i = 0; i < n; i++)
-		{
-			*value = va_arg(va, int);
-			if (value != NULL)
-			{
-				if (i + 1 != n)
-					printf("%d%s", *value, separator);
-				else
-					printf("%d\n", *value);
-			}
-		}
-		va_end(va);
+		printf("%d", va_arg(list, int));
+		if (i != (n - 1) && separator != NULL)
+			printf("%s", separator);
 	}
+	printf("\n");
+
+	va_end(list);
 }
