@@ -14,12 +14,14 @@ void free_list(list_t *head)
  */
 void free_next_node(list_t *current_node)
 {
-	if (current_node->next != NULL)
-	{
-		free_next_node(current_node->next);
-	}
-	if (current_node->str != NULL)
-		free(current_node->str);
 	if (current_node != NULL)
+	{
+		if (current_node->next != NULL)
+		{
+			free_next_node(current_node->next);
+		}
+		if (current_node->str != NULL)
+			free(current_node->str);
 		free(current_node);
+	}
 }
