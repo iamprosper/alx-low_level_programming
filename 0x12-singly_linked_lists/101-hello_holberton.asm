@@ -1,16 +1,13 @@
 section .text
+	extern printf
 	global main
 
 main:
-	mov edx,len
-	mov ecx,msg
-	mov ebx,1
-	mov eax,4
-	int 0x80
-
-	mov eax,1
-	int 0x80
+	mov rdi, formatStr
+	mov al, 0
+	call printf
+	ret
 
 section .data
-msg db 'Hello, Holberton', 0xa
-len equ $ - msg
+formatStr:
+	db `Hello, Holberton\n`, 0
