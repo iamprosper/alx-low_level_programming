@@ -18,6 +18,8 @@ void free_next_node(list_t *current_node)
 	{
 		free_next_node(current_node->next);
 	}
-	free(current_node->str);
-	free(current_node);
+	if (current_node->str != NULL)
+		free(current_node->str);
+	if (current_node != NULL)
+		free(current_node);
 }
