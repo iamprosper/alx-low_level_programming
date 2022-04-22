@@ -27,4 +27,5 @@ list_t *add_node(list_t **head, const char *str);
 list_t *add_node_end(list_t **head, const char *str);
 void free_list(list_t *head);
 size_t str_len(const char *str);
+list_t *next_node(list_t *current_node);
 #endif
