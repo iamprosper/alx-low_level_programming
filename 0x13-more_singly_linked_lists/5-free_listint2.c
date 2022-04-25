@@ -6,6 +6,7 @@
 void free_listint2(listint_t **head)
 {
 	free_last_to_first_node(*head);
+	*head = NULL;
 	head = NULL;
 }
 /**
