@@ -1,11 +1,12 @@
 #include "lists.h"
 /**
- * free_listint - Free a listint_t list
- * @head: The head of the list
+ * free_listint2 - Free a linked list and sets the head to NULL
+ * @head: A double pointer to the listint_t structure
  */
-void free_listint(listint_t *head)
+void free_listint2(listint_t **head)
 {
-	free_last_to_first_node(head);
+	free_last_to_first_node(*head);
+	*head = NULL;
 }
 /**
  * free_last_to_first_node - Free a list starting from the last one
