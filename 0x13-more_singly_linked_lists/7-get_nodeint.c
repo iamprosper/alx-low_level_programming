@@ -26,4 +26,3 @@ listint_t *check_node(listint_t *node, unsigned int index, unsigned int n)
 		return (node);
 	return (node->next == NULL ? NULL : check_node(node->next, index, ++n));
 }
-
