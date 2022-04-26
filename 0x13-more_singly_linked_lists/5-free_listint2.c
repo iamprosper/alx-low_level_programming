@@ -7,7 +7,6 @@ void free_listint2(listint_t **head)
 {
 	free_last_to_first_node(*head);
 	*head = NULL;
-	head = NULL;
 }
 /**
  * free_last_to_first_node - Free a list starting from the last one
