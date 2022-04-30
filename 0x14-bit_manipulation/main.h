@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * struct listint_s - A structure that define binary values
  * @n: The binary value
