@@ -26,4 +26,5 @@ void free_listint(listint_t *head);
 void free_last_to_first_node(listint_t *current_node);
 size_t print_listint(const listint_t *h);
 size_t find_next_node(const listint_t *node, size_t number);
+int get_endianness(void);
 #endif
