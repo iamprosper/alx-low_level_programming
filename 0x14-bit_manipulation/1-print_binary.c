@@ -5,57 +5,24 @@
  */
 void print_binary(unsigned long int n)
 {
-	listint_t *head = NULL;
-	int r = 0;
-	int q = 0;
-	unsigned int div = 0;
+	unsigned long int temp;
+	int shifts;
 
 	if (n == 0)
-		_putchar('0');
-	if (n > 0)
 	{
-		div = n;
-		do {
-			q = div >> 1;
-			r = div - (q * 2);
-			add_nodeint(&head, r);
-			div = q;
-		} while (q != 0);
+		printf("0");
+		return;
 	}
 
-	if (head != NULL)
+	for (temp = n, shifts = 0; (temp >>= 1) > 0; shifts++)
+		;
+
+	for (; shifts >= 0; shifts--)
 	{
-		print_listint(head);
-		free_listint(head);
+		if ((n >> shifts) & 1)
+			_putchar('1');
+		else
+			_putchar('0');
 	}
 }
-/**
- * print_listint - Print all the elements of a listint_t
- * @h: A pointer to the listint_t struct
- *
- * Return: The number of nodes
- */
-size_t print_listint(const listint_t *h)
-{
-	size_t n = 0;
 
-	n = find_next_node(h, n);
-	return (n);
-}
-
-/**
- * find_next_node - Find the next node
- * @node: A pointer to the next node
- * @number: The number of nodes
- *
- * Return: The number of nodes
- */
-size_t find_next_node(const listint_t *node, size_t number)
-{
-	if (node != NULL)
-	{
-		_putchar(node->n + '0');
-		return (find_next_node(node->next, ++number));
-	}
-	return (number);
-}
