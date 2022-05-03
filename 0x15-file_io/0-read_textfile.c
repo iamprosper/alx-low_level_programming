@@ -9,7 +9,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	char *buf = malloc(sizeof(char) * letters);
+	char *buf = (char *)malloc(sizeof(char) * (letters + 1));
 	ssize_t nb = 0;
 	int i = -1;
 
@@ -18,9 +18,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	fd = open(filename, O_RDONLY);
 
-	if (fd != -1)
+	if (fd != -1 && letters > 0)
 	{
 		read(fd, buf, letters);
+		buf[letters] = '\0';
 		while (buf[++i] != '\0')
 		{
 			nb += _putchar(buf[i]);
