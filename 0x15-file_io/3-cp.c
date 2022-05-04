@@ -7,7 +7,7 @@
  * * @ac: argument count
  * * @av: arguments as strings
  * * Return: 0
- * */
+ */
 int main(int ac, char *av[])
 {
 	int input_fd, output_fd, istatus, ostatus;
