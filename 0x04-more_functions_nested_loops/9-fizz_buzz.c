@@ -1,4 +1,4 @@
-#include "main.h"
+/*#include "main.h"*/
 #include <stdio.h>
 
 /**
@@ -9,7 +9,7 @@
 
 void fizz_buzz(void)
 {
-	int i;
+	int i = 0;
 
 	for (i = 1; i <= 100; i++)
 	{
@@ -29,7 +29,7 @@ void fizz_buzz(void)
 			}
 			else
 			{
-				printf("Buzz");
+				printf("Buzz\n");
 			}
 		}
 		else
