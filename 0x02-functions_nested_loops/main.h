@@ -16,4 +16,5 @@ void print_nb(int n, int base);
 void print_from_range(int range, int n, int i, int compute_nb);
 void print_less_98(int n, int i);
 void print_times_table(int n);
+void  natural_nb(int n);
 #endif
