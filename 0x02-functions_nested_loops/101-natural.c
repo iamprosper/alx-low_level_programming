@@ -23,7 +23,7 @@ void natural_nb(int n)
 			}
 		}
 	}
-	printf("Sum: %d\n", sum);
+	printf("%d\n", sum);
 }
 
 /**
