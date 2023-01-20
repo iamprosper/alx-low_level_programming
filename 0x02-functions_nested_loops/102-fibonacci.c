@@ -6,7 +6,7 @@
  *
  * Return: fb_number
  */
-long long fibo(int n)
+long int fibo(int n)
 {
 	if (n == 1 || n == 2)
 		return (1);
@@ -26,9 +26,9 @@ int main(void)
 	for (i = 1; i <= n; i++)
 	{
 		if (i == n)
-			printf("%lld\n", fibo(i));
+			printf("%ld\n", fibo(i));
 		else
-			printf("%lld, ", fibo(i));
+			printf("%ld, ", fibo(i));
 	}
 	return (0);
 }
