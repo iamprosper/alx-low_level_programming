@@ -34,6 +34,6 @@ void natural_nb(int n)
  */
 int main(void)
 {
-	natural_nb(10);
+	natural_nb(1024);
 	return (0);
 }
