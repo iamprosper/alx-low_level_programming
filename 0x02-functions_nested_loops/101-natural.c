@@ -17,7 +17,10 @@ void natural_nb(int n)
 		for (j = 0; j < 2; j++)
 		{
 			if (i % divisors[j] == 0)
+			{
 				sum += i;
+				/*printf("%d\n", i);*/
+			}
 		}
 	}
 	printf("Sum: %d\n", sum);
