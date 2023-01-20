@@ -8,8 +8,10 @@
  */
 long int fibo(int n)
 {
-	if (n == 1 || n == 2)
+	if (n == 2)
 		return (1);
+	else if (n == 3)
+		return (2);
 	return (fibo(n - 1) + fibo(n - 2));
 }
 
@@ -21,9 +23,9 @@ long int fibo(int n)
 int main(void)
 {
 	int i;
-	int n = 50;
+	int n = 51;
 
-	for (i = 1; i <= n; i++)
+	for (i = 2; i <= n; i++)
 	{
 		if (i == n)
 			printf("%ld\n", fibo(i));
