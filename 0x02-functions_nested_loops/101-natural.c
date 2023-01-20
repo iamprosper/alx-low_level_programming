@@ -19,6 +19,7 @@ void natural_nb(int n)
 			if (i % divisors[j] == 0)
 			{
 				sum += i;
+				break;
 				/*printf("%d\n", i);*/
 			}
 		}
@@ -33,6 +34,6 @@ void natural_nb(int n)
  */
 int main(void)
 {
-	natural_nb(1024);
+	natural_nb(10);
 	return (0);
 }
