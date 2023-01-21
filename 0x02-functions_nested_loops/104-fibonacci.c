@@ -24,7 +24,7 @@ int main(void)
 {
 	long int prev = 1, next = 2;
 	long int temp;
-	int n = 90;
+	int n = 98;
 	int i;
 
 	printf("%lu, ", prev);
