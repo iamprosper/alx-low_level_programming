@@ -9,5 +9,5 @@
 int main(void)
 {
 
-	return (O);
+	return (0);
 }
