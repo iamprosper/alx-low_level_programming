@@ -22,15 +22,23 @@ long int fibo(int n)
  */
 int main(void)
 {
+	long int prev = 1, next = 2;
+	long int temp;
+	int n = 50;
 	int i;
-	int n = 10;
+
+	printf("%lu, ", prev);
 
 	for (i = 2; i <= n; i++)
 	{
 		if (i == n)
-			printf("%ld\n", fibo(i));
+			printf("%ld\n", next);
 		else
-			printf("%ld, ", fibo(i));
+			printf("%ld, ", next);
+
+		temp = next;
+		next += prev;
+		prev = temp;
 	}
 	return (0);
 }
