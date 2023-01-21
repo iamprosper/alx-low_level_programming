@@ -23,7 +23,7 @@ long int fibo(int n)
 int main(void)
 {
 	int i;
-	int n = 51;
+	int n = 10;
 
 	for (i = 2; i <= n; i++)
 	{
