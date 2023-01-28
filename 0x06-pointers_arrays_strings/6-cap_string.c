@@ -1,4 +1,27 @@
 #include "main.h"
+
+/**
+ * converter - Caps converter
+ * @i: the char value
+ * @c: A pointer to the char
+ *
+ */
+void converter(char *c, int i)
+{
+	if (c[i + 1] >= 97 && c[i + 1] <= 122)
+	{
+		c[i + 1] = c[i + 1] - 32;
+
+	}
+	else if (c[i + 1] == '\n' && (c[i + 2] != '\0'))
+	{
+		if (c[i + 2] >= 97 && c[i + 2] <= 122)
+			c[i + 2] = c[i + 2] - 32;
+	}
+
+
+}
+
 /**
  * cap_string - Change all starting word to uppercase
  * @c: Pointer to char
@@ -25,21 +48,15 @@ char *cap_string(char *c)
 			/*Checking if the following character is a lowercase character*/
 			if (c[i + 1] != '\0')
 			{
-				if (c[i + 1] >= 97 && c[i + 1] <= 122)
-				{
-					c[i + 1] = c[i + 1] - 32;
-				}
-				else if (c[i + 1] == '\n' && (c[i + 2] != '\0'))
-				{
-					if (c[i + 2] >= 97 && c[i + 2] <= 122)
-						c[i + 2] = c[i + 2] - 32;
-				}
+				converter(c, i);
 			}
-			
+
 			if (c[i] == 9)
 				c[i] = ' ';
 		}
+		else if (i == 0)
+			converter(c, -1);
 	}
-	_putchar('\n');
+	/*_putchar('\n');*/
 	return (c);
 }
