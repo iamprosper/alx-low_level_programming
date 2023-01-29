@@ -50,9 +50,10 @@ char *cap_string(char *c)
 			{
 				converter(c, i);
 			}
-
-			if (c[i] == 9)
-				c[i] = ' ';
+			/*
+			*if (c[i] == 9)
+			*	c[i] = ' ';
+			*/
 		}
 		else if (i == 0)
 			converter(c, -1);
