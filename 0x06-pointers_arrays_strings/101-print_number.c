@@ -61,13 +61,18 @@ void print_all_type(int n, bool min)
  */
 void print_number(int n)
 {
+	bool is_min = 0;
+
 	if (n < 0)
 	{
 		_putchar('-');
 		if (n != INT_MIN)
 			n = -n;
 		else
+		{
 			n = (n + 1) * -1;
+			is_min = 1;
+		}
 	}
 	/*
 	*if (n >= 0 && n <= 9)
@@ -87,9 +92,8 @@ void print_number(int n)
 	*	print_1000_type(n);
 	*}
 	*/
-	if ((n + 1 - INT_MIN) != 0)
+	if (((n + 1 - INT_MIN) != 0) || is_min == 0)
 		print_all_type(n, 0);
 	else
-
 		print_all_type(n, 1);
 }
