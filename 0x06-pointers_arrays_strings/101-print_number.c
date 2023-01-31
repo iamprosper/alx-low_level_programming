@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "main.h"
+#include <limits.h>
 
 /*
 * print_1_type - print a digit from 0 to 9
@@ -58,7 +59,10 @@ void print_number(int n)
 	if (n < 0)
 	{
 		_putchar('-');
-		n = n * -1;
+		if (n != INT_MIN)
+			n = -n;
+		else
+			n = (n + 1) * -1;
 	}
 	/*
 	*if (n >= 0 && n <= 9)
