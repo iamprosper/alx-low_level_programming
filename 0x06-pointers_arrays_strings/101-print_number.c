@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 #include <limits.h>
+#include <stdbool.h>
 
 /*
 * print_1_type - print a digit from 0 to 9
@@ -32,17 +33,21 @@
 /**
  * print_all_type - print all digit number
  * @n: The digit to print
+ * @min: Check if a min int is present
  *
  * Return: Nothing
  */
-void print_all_type(int n)
+void print_all_type(int n, bool min)
 {
 	int r = n / 10;
 
 	if (r >= 1)
 	{
-		print_all_type(n / 10);
-		_putchar(n % 10 + '0');
+		print_all_type(n / 10, 0);
+		if (min == 0)
+			_putchar(n % 10 + '0');
+		else
+			_putchar(((n % 10) + 1) + '0');
 	}
 	else
 		_putchar(n + '0');
@@ -82,5 +87,9 @@ void print_number(int n)
 	*	print_1000_type(n);
 	*}
 	*/
-	print_all_type(n);
+	if ((n + 1 - INT_MIN) != 0)
+		print_all_type(n, 0);
+	else
+
+		print_all_type(n, 1);
 }
