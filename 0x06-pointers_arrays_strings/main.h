@@ -8,3 +8,8 @@ char *string_toupper(char *);
 char *cap_string(char *);
 char *leet(char *);
 void print_number(int c);
+char *infinite_add(char *n1, char *n2, char *r, int size_r);
+int count_str(char *str);
+void find_largest(int n1_size, int n2_size, int *smaller, int *bigger);
+void compute_nb(int *res, int *mod, char *str_res);
+
