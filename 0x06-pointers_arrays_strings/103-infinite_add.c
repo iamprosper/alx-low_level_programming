@@ -121,6 +121,5 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r = add_res;
 	}
 
-	free(add_res);
 	return (r);
 }
