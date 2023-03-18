@@ -19,7 +19,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (idx == 0)
 	{
 		new->n = n;
-		new->prev = NULL;
+		if (*h != NULL)
+			insert_top(*h, new);
 		*h = new;
 		return (new);
 	}
@@ -30,10 +31,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			new->n = n;
 			if (node != NULL)
 			{
-				new->prev = node->prev;
-				new->next = node;
-				node->prev->next = new;
-				node->prev = new;
+				insert_middle(node, new);
 			}
 			else
 			{
@@ -49,4 +47,32 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		index++;
 	}
 	return (NULL);
+}
+
+/**
+  * insert_middle - Insert a new node at the middle of the list
+  * @curr_node: The current node
+  * @new: The new node
+  *
+  * Return: Nothing
+  */
+void insert_middle(dlistint_t *curr_node, dlistint_t *new)
+{
+	new->prev = curr_node->prev;
+	new->next = curr_node;
+	curr_node->prev->next = new;
+	curr_node->prev = new;
+}
+
+/**
+  * insert_top - Insert a new node at the top of the list
+  * @head: The head of the list
+  * @new: Thr new node
+  *
+  * Return: Nothing
+  */
+void insert_top(dlistint_t *head, dlistint_t *new)
+{
+	head->prev = new;
+	new->next = head;
 }
