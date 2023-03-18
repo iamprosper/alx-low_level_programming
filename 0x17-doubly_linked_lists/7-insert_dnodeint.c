@@ -23,7 +23,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			new->n = n;
 
 			if (idx == 0)
+			{
+				new->prev = NULL;
+				new->next = NULL;
 				*h = new;
+			}
 			else
 			{
 				new->prev = node->prev;
